@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/products");
+        const response = await axios.get("http://localhost:8080/api/Products");
         setProducts(response.data);
         console.log(response.data);
       } catch (error) {
@@ -34,7 +34,7 @@ const Home = () => {
         {products.map((product) => (
           <div
             className="card mb-3"
-            key={product.id}
+            key={product.prodId}
             style={{
               width: "270px",
               height: "210px",
@@ -63,14 +63,14 @@ const Home = () => {
                   className="card-title"
                   style={{ margin: "0 0 10px 0", fontSize: "1.2rem" }}
                 >
-                  {product.name.toUpperCase()}
+                  {product.prodName.toUpperCase()}
                 </h5>
-                <i
+                {/* <i
                   className="card-brand"
                   style={{ fontStyle: "italic", fontSize: "0.8rem" }}
                 >
                   {"by " + product.brand}
-                </i>
+                </i> */}
               </div>
               <hr className="hr-line" style={{ margin: "10px 0" }} />
               <div className="home-cart-price">
